@@ -55,7 +55,7 @@ def oemol_to_dict(oemol, wbo=False):
     for bond in oemol.GetBonds():
         a1 = bond.GetBgn().GetIdx()
         a2 = bond.GetEnd().GetIdx()
-        if wbo==True:
+        if wbo:
             if not 'WibergBondOrder' in bond.GetData():
                 raise RuntimeError('Molecule does not have Wiberg Bond Orders')
             wbo = bond.GetData('WibergBondOrder')
